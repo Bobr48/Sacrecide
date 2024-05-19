@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Рок группа </title>
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <link rel="stylesheet" href="{% static '/css/style.css' %}">
+        <script src="{% static '/js/itc-slider.js' %}"></script>
+
+
+    </head>
+    <body>
+        <header>
+                <div class="header-main">
+                    <div class="logo">
+                        <a href="{% url 'home' %}"><img src="{% static '/images/logo.png' %}" alt="logo"></a>
+
+                        <div class="h-name"> <a href="{% url 'home' %}" class="textheader">Sacrecide</a> </div>
+                    </div>
+                    <!--<div class="btn future" > Future </div> -->
+                    <div class="btn about"> <a href="{% url 'merch' %}" class="textheader">Merch</a> </div>
+                    <div class="btn past"> <a href="{% url 'past' %}" class="textheader"> Past </a></div>
+                    <div class="btn about"> <a href="{% url 'about' %}" class="textheader">About us</a> </div>
+                </div>
+        </header>
+        <main>
+
+{% block content %}
+{% endblock %}
+        </main>
+
+        <footer>
+            <div class="buttom">
+                <div class="f-logo">
+                    <img src="{% static '/images/logo.png' %}" alt="logo">
+                    <div class="f-name"> Sacrecide </div>
+                </div>
+                <div class="ss">
+                    <a href="https://vk.com/sacrecide">
+                        <img class="tem2" src="{% static '/images/vk.png' %}" alt="logo">
+                      </a>
+                      <a href="https://www.youtube.com/@SACRECIDE">
+                        <img class="tem1" src="{% static '/images/yt.png' %}" alt="logo">
+                      </a>
+
+                </div>
+            </div>
+        </footer>
+    </body>
+
+</html>

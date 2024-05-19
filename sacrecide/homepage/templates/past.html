@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% for i in past %}
+
+<div class="container-history">
+    <div class="container-history-name">
+        <div class="name-history">
+            <p>{{i.name}}</p>
+        </div>
+        <div class="text-history">
+            <p>{{i.text}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-history-photo">
+        <div class="fotorama" data-width="700" data-ratio="700/467" data-max-width="100%" >
+          {% for p in photo %}
+        {% if p.owner_id == i.id %}
+            <img class="img-for-fotorama" src="{{ p.photo.url }}">
+       {% endif %}
+    {% endfor %}
+        </div>
+</div>
+{% endfor %}
+
+{% endblock %}
+
+

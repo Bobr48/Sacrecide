@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% for i in items %}
+
+
+            <div class="musicans-item">
+                <div class="photo">
+
+                    <img class="img-mus" src="{{ i.photo.url }}">
+                </div>
+                <div class="merch-name-text" >
+                    <div class="merch-name">
+                        <a> {{i.name}}</a>
+                    </div>
+                    <div class="merch-text">
+                        <a> {{i.text}} </a>
+                    </div>
+                    <div class="cost-merch">
+                        <a> Цена: {{i.cost}} Р. </a>
+                        <a href="{{ i.get_absolute_url }}" class="textheade"> Купить </a>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+{% endblock %}
+
+

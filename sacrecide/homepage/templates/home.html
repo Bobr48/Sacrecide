@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+            <div class="banner">
+                <img src="{% static 'images/banner.jpg'%}" alt="banner">
+            </div>
+            <div class="concerts">
+                <div class="head-concert">
+                    <h3>
+                        Концерты
+                    </h3>
+                </div>
+
+  {% for c in concerts %}
+
+                <div class="concert-item">
+                    <div class="date">
+                        <p1> {{c.date_concert|date:"d E - H:i"}} </p1>
+                    </div>
+                    <div class="city">
+                        <a> {{c.city}} </a>
+                    </div>
+                    <div class="place">
+                        <a href="{{c.url_ticket}}" class="textheade"> {{c.place}} </a>
+                    </div>
+                    <div class="cost">
+                        <a> {{c.cost}}Р. </a>
+                    </div>
+                </div>
+{% endfor %}
+
+            </div>
+
+
+            <div class="head-youtube">
+                <h3></h3>
+            </div>
+            <div style="margin:0 auto; width: 600px; padding-bottom: 70px">
+                <div id="vk_playlist_-2000507375_19507375"></div>
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?171"></script>
+<script type="text/javascript">
+  (function() {
+    VK.Widgets.Playlist("vk_playlist_-2000507375_19507375", -2000507375, 19507375,'8e338127fe00e2baaa', {width: 600});
+  }());
+</script>
+            </div>
+            <div class="youtube-vstavka">
+                <iframe  width="720" height="480" src="https://www.youtube.com/embed/0ioYf5nv-hE?si=T263btz2WmfAmPtx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+{% endblock %}
